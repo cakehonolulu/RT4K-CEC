@@ -1,0 +1,3 @@
+[submodule "CEC_Enabler"]
+	path = CEC_Enabler
+	url = https://github.com/cakehonolulu/CEC_Enabler

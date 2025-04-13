@@ -14,7 +14,9 @@ To get started, you will need the following:
   
 - **1 USB-C OTG Y Cable**  
   Splits into two USB-C ports (one for data, one for power). The MOGOOD brand on Amazon has been tested.
-  
+
+<img width = "33%" src="https://github.com/user-attachments/assets/4530e537-c3c7-48e7-aefb-f1df7ab9ef03">
+
 - **2 USB-A to USB-C Cables**
 
 ---

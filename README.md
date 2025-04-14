@@ -6,18 +6,16 @@ A repository demonstrating how to control RetroTink 4K devices using HDMI-CEC.
 
 To get started, you will need the following:
 
-- **Raspberry Pi**  
-  Tested with Raspberry Pi 4, but other models should work as long as the script runs.
-  
 - **Homemade Pico-CEC**  
   Alternatively, you can use the prebuilt CEC_Enabler from [LazerBear Industries](https://www.laserbear.net/products/cec-enabler).
   
 - **1 USB-C OTG Y Cable**  
   Splits into two USB-C ports (one for data, one for power). The MOGOOD brand on Amazon has been tested.
 
-<img width = "33%" src="https://github.com/user-attachments/assets/4530e537-c3c7-48e7-aefb-f1df7ab9ef03">
+- **1 USB-C to USB-C cable**
+  To connect the Pico-CEC to the OTG Y cable's data port.
 
-- **2 USB-A to USB-C Cables**
+<img width = "33%" src="https://github.com/user-attachments/assets/4530e537-c3c7-48e7-aefb-f1df7ab9ef03">
 
 ---
 
@@ -33,11 +31,10 @@ To get started, you will need the following:
 
 3. **CEC_Enabler Connection**
    - Attach the CEC_Enabler to the RT4K HDMI output port.  
-   - Connect an HDMI cable to the other end of the CEC_Enabler.
+   - Connect the HDMI OUT cable to the other end of the CEC_Enabler.
+   - Connect the CEC_Enabler to the OTG Y splicer's data port using the TypeC to TypeC cable.
 
-4. **Raspberry Pi Connections**
-   - Use a USB-C to USB-A cable to connect the USB-C port of the CEC_Enabler to the Raspberry Pi.  
-   - Use the second USB-C to USB-A cable to connect the Raspberry Pi to the Y splitter's data input port.
+4. **Profit**
 
 ---
 
@@ -46,7 +43,8 @@ To get started, you will need the following:
 1. **Compile the CEC_Enabler Project**
    Run the following commands to build the project:
    ```bash
-   cd RT4K-CEC/
+   git clone https://github.com/cakehonolulu/RT4K-CEC --recursive
+   cd RT4K-CEC/CEC_Enabler
    mkdir build
    cd build
    cmake ..
@@ -60,16 +58,7 @@ To get started, you will need the following:
 3. **Reconnect Everything**
    - Reconnect all hardware components as described in the hardware setup.
 
-4. **Run the Script**
-   - Execute the script provided in the repository:
-
-   ```python
-   python3 rt4kcec.py
-   ```
-
- Ensure the Raspberry Pi has two cables connected:  
-   - One to the CEC_Enabler.  
-   - One to the RT4K OTG splitter's data input port.
+4. **Profit**
 
 ---
 
@@ -77,27 +66,18 @@ To get started, you will need the following:
 
 Use the remote's DPAD to control the RT4K:
 
-- **Up/Down**: Navigate the RT4K menu.  
-- **Left**: Power the RT4K on or off.  
-- **Right**: Open the RT4K menu.  
-- **Back**: Go back.  
-- **Channel Up**: Auto gain.  
+- **Up/Down/Left/Right**: Navigate the RT4K menu.
+- **Back**: Go back.
+- **Channel Up**: Auto gain.
 - **Channel Down**: Auto phase.
-
----
-
-## Development
-
-This project is actively exploring ways to overcome the limitation of the CEC_Enabler firmware being in USB "Device" mode instead of "Host" mode. If this limitation can be resolved, it may be possible to eliminate the need for the Raspberry Pi entirely, simplifying the setup and reducing hardware requirements because the CEC_Enabler would also be in charge of sending the serial data to the RT4K.
-
-Contributions, ideas, or suggestions on how to achieve this are welcome. Please feel free to open an issue or submit a pull request if you have a way of doing so!
+- **Double-click (1.25s inbetween) up -> Open menu**
+- **Double-click (1.25s inbetween) down -> Power on/off**
 
 ---
 
 ## Notes
 
-- Ensure all connections are secure before powering on the devices.  
-- The script assumes the Raspberry Pi is properly configured with Python 3 installed.  
-- The Python script (`rt4kcec.py`) can be configured as a systemd service on the Raspberry Pi to run in the background without requiring user interaction. This ensures the script starts automatically on boot.
+- Ensure all connections are secure before powering on the devices.
+- Double-click detection could be much better, sometimes gives up false positives.
 
 ---

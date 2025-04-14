@@ -1,5 +1,7 @@
 # RT4K-CEC
 
+https://github.com/user-attachments/assets/c756dde5-b154-407c-9d5a-72f28b9b391e
+
 A repository demonstrating how to control RetroTink 4K devices using HDMI-CEC.
 
 ## Materials
@@ -12,10 +14,10 @@ To get started, you will need the following:
 - **1 USB-C OTG Y Cable**  
   Splits into two USB-C ports (one for data, one for power). The MOGOOD brand on Amazon has been tested.
 
+<img width = "33%" src="https://github.com/user-attachments/assets/4530e537-c3c7-48e7-aefb-f1df7ab9ef03">
+
 - **1 USB-C to USB-C cable**
   To connect the Pico-CEC to the OTG Y cable's data port.
-
-<img width = "33%" src="https://github.com/user-attachments/assets/4530e537-c3c7-48e7-aefb-f1df7ab9ef03">
 
 ---
 
